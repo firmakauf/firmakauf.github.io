@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirmenKauf | Diskreter Unternehmenskauf in Deutschland</title>
+    <meta name="description" content="Professionelle Vermittlung und Beratung beim Kauf von Unternehmen in Deutschland. Diskret, persönlich und verhandlungsbasiert – Ihr Partner für den Unternehmenserwerb.">
+    <style>
+        :root {
+            --primary: #1a2a4a;
+            --accent: #b8860b;
+            --light: #f8f9fa;
+            --text: #333;
+            --gray: #6c757d;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Header / Nav */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .logo span { color: var(--accent); }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2c3e6b 100%);
+            color: #fff;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.9rem 2.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #9a7209;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.05rem;
+        }
+
+        /* Services Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        .card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Process */
+        .process {
+            background: var(--light);
+        }
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .step {
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .step-num {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        .step h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .step p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* About – jetzt ohne Foto, volle Breite */
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--primary);
+            color: #fff;
+        }
+        .contact h2 { color: #fff; }
+        .contact .section-sub { color: rgba(255,255,255,0.7); }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.9rem 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .contact-form button {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover { background: #9a7209; }
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+            opacity: 0.85;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #111a2e;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: rgba(255,255,255,0.8);
+            margin: 0 0.5rem;
+        }
+        footer a:hover { color: #fff; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Firmen<span>Kauf</span></div>
+            <ul class="nav-links">
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ablauf">Ablauf</a></li>
+                <li><a href="#ueber">Über mich</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Ihr Unternehmen – diskret gefunden, professionell verhandelt</h1>
+        <p>Ich begleite Sie persönlich beim Erwerb von Unternehmen in Deutschland. Ohne Online-Bestellprozess – ausschließlich durch vertrauliche Beratung und individuelle Verhandlungen.</p>
+        <a href="#kontakt" class="btn">Erstgespräch vereinbaren</a>
+    </section>
+
+    <!-- Leistungen -->
+    <section id="leistungen">
+        <h2>Meine Leistungen</h2>
+        <p class="section-sub">Vom ersten Kontakt bis zum notariellen Abschluss begleite ich Sie durch jeden Schritt des Unternehmenserwerbs.</p>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h3>Unternehmenssuche & Matching</h3>
+                <p>Ich identifiziere Unternehmen, die zu Ihren unternehmerischen Zielen, Ihrer Branche und Ihrem Budget passen – aus einem diskreten Netzwerk qualifizierter Verkäufer.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Bewertung & Due Diligence</h3>
+                <p>Fundierte Analyse der wirtschaftlichen Lage, rechtlicher Strukturen und Potenziale des Zielunternehmens, bevor Sie ein verbindliches Angebot abgeben.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Verhandlungsbegleitung</h3>
+                <p>Ich führe die Kaufpreisverhandlungen in Ihrem Namen – diskret, kompetent und mit dem Ziel eines fairen, für beide Seiten tragfähigen Ergebnisses.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📜</div>
+                <h3>Vertrags- & Übergabemanagement</h3>
+                <p>Enge Zusammenarbeit mit Steuerberatern und Notaren bei der Vertragsgestaltung, Due-Diligence-Prüfung und der reibungslosen Übergabe des Unternehmens.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ablauf -->
+    <section id="ablauf" class="process">
+        <h2>So läuft Ihr Unternehmenskauf ab</h2>
+        <p class="section-sub">Ein klar strukturierter Prozess – ohne Online-Bestellungen, sondern durch persönliche Beratung und individuelle Verhandlung.</p>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>Erstgespräch</h4>
+                <p>Wir lernen Ihre Ziele, Branche und Budgetrahmen in einem vertraulichen Gespräch kennen.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Matching & Präsentation</h4>
+                <p>Sie erhalten eine kuratierte Auswahl passender Unternehmen mit ersten Kennzahlen.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>Due Diligence</h4>
+                <p>Gemeinsam mit Ihren Beratern prüfen wir das Zielunternehmen im Detail.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h4>Verhandlung & Abschluss</h4>
+                <p>Ich verhandle den Kaufpreis und begleite Sie bis zum notariellen Vertragsschluss.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über mich (ohne Foto) -->
+    <section id="ueber">
+        <div class="about-text">
+            <h2>Über Rachel</h2>
+            <p>Als erfahrene Beraterin für Unternehmensnachfolge und -erwerb begleite ich Käufer und Verkäufer seit mehreren Jahren durch den komplexen Prozess des Unternehmenskaufs in Deutschland.</p>
+            <p>Mein Ansatz ist klar: <strong>persönlich, diskret und verhandlungsbasiert.</strong> Jeder Unternehmenskauf ist einzigartig – deshalb gibt es bei mir keine Standardangebote oder Online-Bestellprozesse. Stattdessen nehme ich mir die Zeit, die jede Transaktion verdient, und arbeite eng mit Steuerberatern, Notaren und Branchenexperten zusammen.</p>
+            <p>Ob Sie ein inhabergeführtes Mittelstandsunternehmen, einen Handwerksbetrieb oder ein Dienstleistungsunternehmen erwerben möchten – ich stehe Ihnen mit Fachwissen, Netzwerk und Verhandlungskompetenz zur Seite.</p>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="contact">
+        <h2>Kontakt aufnehmen</h2>
+        <p class="section-sub">Vereinbaren Sie ein unverbindliches Erstgespräch. Alle Anfragen werden streng vertraulich behandelt.</p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Vielen Dank für Ihre Nachricht. Rachel meldet sich innerhalb von 24 Stunden bei Ihnen.');">
+            <input type="text" placeholder="Ihr Name" required>
+            <input type="email" placeholder="Ihre E-Mail-Adresse" required>
+            <input type="tel" placeholder="Telefonnummer (optional)">
+            <textarea placeholder="Ihre Nachricht – z. B. welche Branche Sie suchen, ungefähres Budget, Zeitrahmen..." required></textarea>
+            <button type="submit">Anfrage senden</button>
+        </form>
+        <div class="contact-info">
+            <p>Alternativ erreichen Sie mich direkt:</p>
+            <p>📧 <a href="mailto:rachel@firmakauf.com" style="color:#fff;text-decoration:underline;">rachel@firmakauf.com</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FirmenKauf · Rachel · Alle Rechte vorbehalten</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="#">Impressum</a> |
+            <a href="#">Datenschutzerklärung</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.75rem;">
+            Hinweis: Alle Unternehmenskäufe erfolgen ausschließlich über persönliche Verhandlungen. Es gibt keine Online-Bestell- oder E-Commerce-Funktionen.
+        </p>
+    </footer>
+
+</body>
+</html>   
